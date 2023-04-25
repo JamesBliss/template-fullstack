@@ -1,0 +1,14 @@
+import React from "react";
+
+//
+const useHasMounted = (): boolean => {
+  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  return hasMounted;
+};
+
+export default useHasMounted;
