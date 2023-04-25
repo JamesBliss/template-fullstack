@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Inter, Noto_Serif } from "next/font/google";
 
 /* ===== */
@@ -18,11 +19,6 @@ const noto = Noto_Serif({
 });
 
 //
-const fonts = `
-  html {
-    --font-inter: ${inter.style.fontFamily};
-    --font-noto: ${noto.style.fontFamily};
-  }
-`;
+const fonts = clsx(inter.className, noto.className);
 
 export default fonts;

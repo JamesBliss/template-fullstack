@@ -10,6 +10,9 @@ const env = {
 
 const nextConfig = {
   poweredByHeader: false,
+  experimental: {
+    appDir: true,
+  },
   images: {
     domains: ["res.cloudinary.com", "img.youtube.com"],
   },
