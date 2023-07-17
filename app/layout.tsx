@@ -10,8 +10,8 @@ import siteMetadata from "@config/metadata";
 // components
 import Header from "@components/Layout.Header";
 import Footer from "@components/Layout.Footer";
-import Progress from "@components/Layout.Progress";
 
+//
 export const metadata: Metadata = siteMetadata;
 
 //
@@ -23,7 +23,6 @@ const Layout = ({ children }: { children?: ReactNode }) => (
         {children}
         <Footer />
         <Analytics />
-        <Progress />
       </div>
     </body>
   </html>

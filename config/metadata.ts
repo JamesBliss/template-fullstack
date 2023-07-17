@@ -1,10 +1,13 @@
 const metadata = {
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
+
   // https://beta.nextjs.org/docs/api-reference/metadata#metadata-fields
   title: {
     default: "Title",
     template: "%s | Website",
   },
   description: "Description | Website",
+  url: process.env.NEXT_PUBLIC_URL,
 
   //  https://beta.nextjs.org/docs/api-reference/metadata#twitter
   twitter: {
@@ -18,12 +21,12 @@ const metadata = {
     title: "Title",
     description: "Description",
     type: "website",
-    url: "http://localhost:3000",
+    url: process.env.NEXT_PUBLIC_URL,
     siteName: "Site name",
     locale: "en",
     images: [
       {
-        url: "https://localhost:3000/og/og.jpg",
+        url: `${process.env.NEXT_PUBLIC_URL}/api/og`,
         width: 1200,
         height: 675,
       },

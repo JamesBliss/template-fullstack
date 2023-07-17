@@ -73,7 +73,7 @@ interface ErrorLoggerParams {
    * Variables used if the error was thrown on a mutation or query
    */
   variables?: {
-     [key: string]: any;
+    [key: string]: any;
   };
 }
 

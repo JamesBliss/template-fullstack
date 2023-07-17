@@ -1,31 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
-
-const packageJSON = require("./package.json");
-
-const env = {
-  ...process.env,
-  APP_VERSION: packageJSON.version,
-};
 
 const nextConfig = {
   poweredByHeader: false,
-  experimental: {
-    appDir: true,
-  },
   images: {
     domains: ["res.cloudinary.com", "img.youtube.com"],
-  },
-  serverRuntimeConfig: Object.keys(env).reduce((vars, name) => {
-    if (name.match(/(^NODE_VERSION$|^NODE_ENV$|^npm_)/)) return vars;
-    return { ...vars, [name]: env[name] };
-  }, {}),
-  publicRuntimeConfig: Object.keys(env).reduce((vars, name) => {
-    if (name.match(/(^PRIVATE_|^NODE_VERSION$|^NODE_ENV$|^npm_)/)) return vars;
-    return { ...vars, [name]: env[name] };
-  }, {}),
-  async generateBuildId() {
-    return `${env.ENV}-${env.APP_VERSION}`;
   },
   redirects() {
     return [
